@@ -39,7 +39,7 @@ module.exports = function (options) {
     // By default, we'll de-indent your commit
     // template and will keep empty lines.
     prompter: function(cz, commit) {
-      console.log('\nLine 1 will be cropped at 80 characters. All other lines will be wrapped after 80 characters.\n');
+      console.log('\nLine 1 will be cropped at 72 characters. All other lines will be wrapped\n');
 
       // Let's ask some questions of the user
       // so that we can populate our commit
