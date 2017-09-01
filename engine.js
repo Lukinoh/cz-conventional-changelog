@@ -18,11 +18,11 @@ module.exports = function (options) {
 
   var types = options.types;
 
-  var length = longest(Object.keys(types)).length + 1;
+  var length = longest(Object.keys(types)).length + 4;
   var choices = map(types, function (type, key) {
     return {
       name: rightPad(type.emoji + ' ' + key + ':', length) + ' ' + type.description,
-      value: key
+      value: type.emoji + ' ' + key
     };
   });
 
@@ -39,7 +39,7 @@ module.exports = function (options) {
     // By default, we'll de-indent your commit
     // template and will keep empty lines.
     prompter: function(cz, commit) {
-      console.log('\nLine 1 will be cropped at 100 characters. All other lines will be wrapped after 100 characters.\n');
+      console.log('\nLine 1 will be cropped at 80 characters. All other lines will be wrapped after 80 characters.\n');
 
       // Let's ask some questions of the user
       // so that we can populate our commit
@@ -77,7 +77,7 @@ module.exports = function (options) {
         }
       ]).then(function(answers) {
 
-        var maxLineWidth = 100;
+        var maxLineWidth = 80;
 
         var wrapOptions = {
           trim: true,
