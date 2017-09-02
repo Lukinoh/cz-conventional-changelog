@@ -2,6 +2,7 @@
 
 var wrap = require('word-wrap');
 var map = require('lodash.map');
+var head = require('loadash.head');
 var longest = require('longest');
 var rightPad = require('right-pad');
 
@@ -18,10 +19,14 @@ module.exports = function (options) {
 
   var types = options.types;
 
+  var headKey = head(Object.keys(types));
   var length = longest(Object.keys(types)).length + 4;
-  var choices = map(types, function (type, key) {
+
+  var choices = map(types, function (type, key, index) {
+    // The prompt > is counted as character, hence in order to align correct all the choices, we have to remove 1 character
+    // to the first choice.
     return {
-      name: rightPad(type.emoji + ' ' + key + ':', length) + ' ' + type.description,
+      name: rightPad(type.emoji + ' ' + key + ':', key === headKey ? length - 1 : length) + ' ' + type.description,
       value: type.emoji + ' ' + key
     };
   });
