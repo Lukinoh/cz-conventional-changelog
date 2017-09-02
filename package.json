@@ -16,8 +16,7 @@
   "author": "Jim Cummins <jimthedev@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "lodash.head": "^4.5.1",
-    "lodash.map": "^4.5.1",
+    "lodash": "^4.17.4",
     "longest": "^1.0.1",
     "pad-right": "^0.2.2",
     "right-pad": "^1.0.1",

@@ -1,8 +1,8 @@
 "format cjs";
 
 var wrap = require('word-wrap');
-var map = require('lodash.map');
-var head = require('loadash.head');
+var map = require('lodash/map');
+var head = require('loadash/head');
 var longest = require('longest');
 var rightPad = require('right-pad');
 
