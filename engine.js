@@ -2,7 +2,7 @@
 
 var wrap = require('word-wrap');
 var map = require('lodash/map');
-var head = require('loadash/head');
+var head = require('lodash/head');
 var longest = require('longest');
 var rightPad = require('right-pad');
 
